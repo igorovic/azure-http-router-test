@@ -1,73 +1,21 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# Reproduction steps
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+- npm install
+- npm run start:azure
+- call the api at => http://localhost:7071/api/
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## The error in terminal
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
 ```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+[2021-08-09T08:22:08.893Z] (node:2396) UnhandledPromiseRejectionWarning: TypeError: trouter_1.default is not a constructor
+[2021-08-09T08:22:08.895Z]     at new AzureHttpRouter (C:\Users\ig\DEV\azure-http-router-test\node_modules\@nestjs\azure-func-http\dist\router\azure-http.router.js:12:15)
+[2021-08-09T08:22:08.896Z]     at createApp (C:\Users\ig\DEV\azure-http-router-test\dist\src\main.azure.js:8:73)
+[2021-08-09T08:22:08.898Z]     at AzureHttpAdapterStatic.<anonymous> (C:\Users\ig\DEV\azure-http-router-test\node_modules\@nestjs\azure-func-http\dist\azure-http.adapter.js:24:31)
+[2021-08-09T08:22:08.899Z]     at Generator.next (<anonymous>)
+[2021-08-09T08:22:08.901Z]     at C:\Users\ig\DEV\azure-http-router-test\node_modules\@nestjs\azure-func-http\dist\azure-http.adapter.js:8:71
+[2021-08-09T08:22:08.903Z]     at new Promise (<anonymous>)
+[2021-08-09T08:22:08.905Z]     at __awaiter (C:\Users\ig\DEV\azure-http-router-test\node_modules\@nestjs\azure-func-http\dist\azure-http.adapter.js:4:12)
+[2021-08-09T08:22:08.909Z]     at AzureHttpAdapterStatic.createHandler (C:\Users\ig\DEV\azure-http-router-test\node_modules\@nestjs\azure-func-http\dist\azure-http.adapter.js:23:16)
+[2021-08-09T08:22:08.911Z]     at AzureHttpAdapterStatic.handle (C:\Users\ig\DEV\azure-http-router-test\node_modules\@nestjs\azure-func-http\dist\azure-http.adapter.js:20:14)
+[2021-08-09T08:22:08.913Z]     at Object.default_1 [as default] (C:\Users\ig\DEV\azure-http-router-test\dist\main\index.js:6:40)
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
